@@ -1,0 +1,46 @@
+# ── Python ───────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# ── Jupyter Notebooks ────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ── Data files (do not commit raw data to GitHub) ────────
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/external/*
+!data/external/.gitkeep
+*.csv
+*.xlsx
+*.parquet
+
+# ── Trained models & large binaries ──────────────────────
+*.h5
+*.keras
+*.pkl
+*.joblib
+
+# ── Virtual Environments ─────────────────────────────────
+.env
+.venv
+env/
+venv/
+
+# ── OS-generated files ───────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Secrets & API keys (NEVER commit these) ──────────────
+secrets.yaml
+*.pem
+*.key
