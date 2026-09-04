@@ -213,8 +213,10 @@ Test-set performance (129 held-out patients, real class distribution):
   screening triage tool this may be an acceptable trade for 75% recall, but it is not a
   diagnostic instrument.
 
-EDA figures are in [`outputs/figures/`](outputs/figures/): class imbalance, feature
-distributions, the correlation matrix, per-class boxplots, and outlier inspection.
+Every figure is written to [`outputs/figures/`](outputs/figures/) by the notebook itself,
+so they regenerate on each run: missing-value and class distributions, feature
+distributions, the correlation matrix, per-class boxplots, outlier inspection, training
+curves, the model comparison chart, confusion matrices, and the ROC curves.
 
 ### Limitations
 
