@@ -106,7 +106,7 @@ cervical-cancer-risk-prediction/
 │   ├── download_data.py                 # Reproducible dataset download + checksum
 │   └── data_loader.py                   # Loading, cleaning, and imputation
 ├── outputs/
-│   ├── figures/                         # Exported EDA figures
+│   ├── figures/                         # Exported EDA and result figures
 │   └── reports/                         # Final report files
 ├── tests/                               # Unit tests for src/
 ├── environment.yml                      # Conda environment specification
@@ -213,10 +213,32 @@ Test-set performance (129 held-out patients, real class distribution):
   screening triage tool this may be an acceptable trade for 75% recall, but it is not a
   diagnostic instrument.
 
+### Figures
+
+![Model performance comparison](outputs/figures/10_model_performance_comparison.png)
+
+The three architectures side by side on every threshold metric — the flat profile across
+models is the finding, not an artefact.
+
+![ROC curves](outputs/figures/12_roc_curves.png)
+
+Threshold-independent ranking quality, where the autoencoder variant leads (AUC 0.910)
+despite its worse F1.
+
+![Confusion matrices](outputs/figures/11_confusion_matrices.png)
+
+The same 75% recall in every model, and the false positives behind the ~0.6 precision.
+
+![Training curves](outputs/figures/09_training_curves.png)
+
+Loss and accuracy per epoch for all three models. Each run stops at a different epoch
+(45, 33, 58) because early stopping halts on validation loss and restores the best
+weights; the train/validation gap is the small-sample overfitting the metrics reflect.
+
 Every figure is written to [`outputs/figures/`](outputs/figures/) by the notebook itself,
-so they regenerate on each run: missing-value and class distributions, feature
-distributions, the correlation matrix, per-class boxplots, outlier inspection, training
-curves, the model comparison chart, confusion matrices, and the ROC curves.
+so they regenerate on each run. Beyond the four above: missing-value and class
+distributions, feature distributions, the correlation matrix, per-class boxplots, and
+outlier inspection.
 
 ### Limitations
 
